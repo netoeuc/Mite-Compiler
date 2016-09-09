@@ -1,0 +1,29 @@
+def funcao(x: int, y: int, z:char) : int 
+{ 
+	print(z);
+	return (x+y);
+}
+
+def main() 
+{    
+	x, y : int;   
+	z : char;
+	resultado:int;
+	x = 12;      
+	y = -6;   
+	z = 'a';   
+
+	## Forma isolada
+	call funcao(x, y, z);
+	
+	## Dentro de uma expressao
+	novoResultado:int;
+	novoResultado = 3+2+25+30;
+	novoResultado = 3+243+funcao(x, y, z) +25+30;
+	print(resultado);
+
+} 
+
+
+
+

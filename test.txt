@@ -1,0 +1,9 @@
+def x(y:char){
+	
+	z: int; 
+	j :int;
+	z = 0;
+	j = 1;
+	h = z+j;
+}
+

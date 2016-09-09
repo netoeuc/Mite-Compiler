@@ -1,0 +1,241 @@
+def somaDe3ValoresMaioresQue10TendoResultadoMaiorQue40(x,y,z)
+
+exprRelacional0 = y
+exprRelacional1 = 10
+
+dec0=exprRelacional0 < exprRelacional1
+
+varIf0 = dec0
+ifFalse varIf0 goto LElse3
+expA0 = y
+expA1 = 10
+
+at0=expA0 + expA1
+y = at0
+
+
+goto LDepois3
+LElse3
+expA2 = y
+expA3 = 20
+
+at1=expA2 + expA3
+y = at1
+
+
+LDepois3
+
+exprRelacional2 = x
+exprRelacional3 = 10
+
+expLogica0=exprRelacional2 < exprRelacional3
+
+exprRelacional4 = x
+exprRelacional5 = 10
+
+expLogica1=exprRelacional4 < exprRelacional5
+
+dec1=expLogica0 or expLogica1
+varIf1 = dec1
+ifFalse varIf1 goto LElse3
+expA4 = x
+expA5 = 10
+
+at2=expA4 + expA5
+x = at2
+
+
+goto LDepois3
+LElse3
+
+LDepois3
+
+exprRelacional6 = z
+exprRelacional7 = 10
+
+dec2=exprRelacional6 < exprRelacional7
+
+varIf2 = dec2
+ifFalse varIf2 goto LElse3
+expA6 = z
+expA7 = 10
+
+at3=expA6 + expA7
+z = at3
+
+
+goto LDepois3
+LElse3
+
+LDepois3
+
+expA10 = x
+expA11 = y
+expA8=expA10 + expA11
+expA9 = z
+exprRelacional8=expA8 + expA9
+exprRelacional9 = 40
+
+wh0=exprRelacional8 < exprRelacional9
+
+varWhile0 = wh0
+LWInicio1
+ifFalse varWhile0 goto LWResto1
+expA12 = x
+expA13 = 10
+
+at4=expA12 + expA13
+x = at4
+
+expA14 = y
+expA15 = 10
+
+at5=expA14 + expA15
+y = at5
+
+expA16 = z
+expA17 = 10
+
+at6=expA16 + expA17
+z = at6
+
+
+goto LWInicio1
+LWResto1
+
+return rt0
+
+.end function 
+
+def main()
+
+
+
+
+
+
+expA22 = 'a'
+
+expA23 = 1
+
+at7=expA22 - expA23
+j = at7
+
+expU0 = 4
+
+at8 = -expU0
+x = at8
+
+at9 = 6
+
+y = at9
+
+expA62 = 1
+
+expA63 = 2
+
+expA60=expA62 + expA63
+expA61 = 34
+
+expA58=expA60 + expA61
+expA59 = 2
+
+expA56=expA58 + expA59
+expA57 = 3
+
+expA54=expA56 + expA57
+expA55 = 4
+
+expA52=expA54 + expA55
+expA53 = 5
+
+expA50=expA52 + expA53
+expA51 = 5
+
+expA48=expA50 + expA51
+expA49 = 5
+
+expA46=expA48 + expA49
+expA47 = 5
+
+expA44=expA46 + expA47
+expA45 = 5
+
+expA42=expA44 + expA45
+expA43 = 5
+
+expA40=expA42 + expA43
+expA41 = 5
+
+expA38=expA40 + expA41
+expA39 = 5
+
+expA36=expA38 + expA39
+expA37 = 5
+
+expA34=expA36 + expA37
+expA35 = 5
+
+expA32=expA34 + expA35
+expA33 = 5
+
+expA30=expA32 + expA33
+expA31 = 5
+
+expA28=expA30 + expA31
+expA29 = 5
+
+expA26=expA28 + expA29
+expA27 = 5
+
+expA24=expA26 + expA27
+expA25 = 5005
+
+at10=expA24 + expA25
+z = at10
+
+expA64 = 1
+
+chamadaf0 = x
+chamadaf1 = y
+chamadaf2 = z
+expA65 = somaDe3ValoresMaioresQue10TendoResultadoMaiorQue40(chamadaf0,chamadaf1,chamadaf2) //Como conversamos, neste caso, nao haverá "call", os parâmetros serão passados
+
+at11=expA64 + expA65
+hhh = at11
+
+
+chamadaf3 = x
+expA66 = 2
+
+expA67 = 2
+
+chamadaf4=expA66 + expA67
+expA68 = 3
+
+expA69 = 3
+
+chamadaf5=expA68 + expA69
+at12 = somaDe3ValoresMaioresQue10TendoResultadoMaiorQue40(chamadaf3,chamadaf4,chamadaf5) //Como conversamos, neste caso, nao haverá "call", os parâmetros serão passados
+
+resultado = at12
+
+chamadaf6 = x
+chamadaf7 = y
+chamadaf8 = z
+at13 = somaDe3ValoresMaioresQue10TendoResultadoMaiorQue40(chamadaf6,chamadaf7,chamadaf8) //Como conversamos, neste caso, nao haverá "call", os parâmetros serão passados
+
+resultado = at13
+
+
+chamadaf9 = x
+chamadaf10 = y
+chamadaf11 = z
+chamadaFCmd0 = somaDe3ValoresMaioresQue10TendoResultadoMaiorQue40(chamadaf9,chamadaf10,chamadaf11) //Como conversamos, neste caso, nao haverá "call", os parâmetros serão passados
+
+esc0 = resultado
+param esc0
+call print
+
+.end function 
+

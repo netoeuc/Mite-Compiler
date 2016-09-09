@@ -1,0 +1,141 @@
+Gramática Concreta
+
+<programa> ::= <decl_global> <programa>
+			| ε
+
+
+<decl_global> :: = <decl_variavel_e_atribuicao>
+			| <decl_funcao> 
+
+
+<decl_variavel_e_atribuicao> :== <lista_idents> <restoAtribuicaoDecl_variavel>
+
+<restoAtribuicaoDecl_variavel> :== “=“ <expressao> “;”
+							| “:” <tipo> “;"
+
+<lista_idents> ::= IDENTIFICADOR <restoLista_idents> 
+
+<restoLista_idents> ::= (",” IDENTIFICADOR) <restoLista_idents>
+				| ε
+
+
+<tipo> ::= "int" | "char" | "float" | “string" 
+
+
+<decl_funcao> ::= <assinatura> <bloco> 
+
+
+<assinatura> ::= "def" IDENTIFICADOR "(" <param_formais> ")” <restoAssinatura>
+
+<restoAssinatura> ::= ":" <tipo>
+				| ε
+
+<param_formais> ::= IDENTIFICADOR ":" <tipo> <restoParam_formais>
+				| ε
+
+<restoParam_formais> :== ( “," IDENTIFICADOR ":"<tipo>) <restoParam_formais>
+					| ε
+
+
+<bloco> ::= "{" <lista_comandos> “}" 
+
+
+<lista_comandos> ::=<comando> <lista_comandos>
+				| ε
+
+
+<comando> ::= <decl_variavel_e_atribuicao>
+			| <iteracao> 
+			| <decisao> 
+			| <escrita> 
+			| <retorno> 
+			| <bloco> 
+			| <chamada_func_cmd>
+
+
+<iteracao> ::= "while" "(" <expressao> ")" <comando>
+
+
+<decisao> ::= "if" "(" <expressao> ")” <comando> <restoDecisao>
+
+<restoDecisao> ::= "else" <decisao>
+			| <comando>
+
+
+
+
+<escrita> ::= "print" "(" <expressao> ")" “;" 
+
+
+<chamada_func_cmd> ::= "call" <chamada_func> “;" 
+
+
+<retorno> ::= "return" <expressao> “;" 
+
+
+<chamada_func> ::= IDENTIFICADOR <restoChamadaFunc>
+
+<restoChamadaFunc> ::= "(" <lista_exprs>”)”
+					| ε
+
+
+<lista_exprs> ::=ε
+			| <expressao> <restoLista_exprs>
+
+<restoLista_exprs> :== “," <expressao> <restoLista_exprs>
+				| ε
+
+
+<expressao> ::= <expressaoA>
+
+<expressaoA> ::= <expressaoB> <restoExpressaoA>
+
+<restoExpressaoA> ::= “or" <expressaoA>
+				| "and" <expressaoA>
+				| ε						//or, and
+
+<expressaoB> ::= <expressaoC> <restoExpressaoB>
+
+<restoExpressaoB> ::= “==" <expressaoB>
+				| “!="<expressaoB>
+				| “<“<expressaoB>
+				| “>”<expressaoB>
+				| “<=“<expressaoB>
+				| “>=“ <expressaoB>
+				| ε
+									// ==, !=, <, >, <=, >=
+
+
+<expressaoC> ::= <expressaoD> <restoExpressaoC>
+
+<restoExpressaoC> ::= “+” <expressaoC>
+				| “-“ <expressaoC>
+				| ε					//+,-
+
+
+
+<expressaoD> ::= <expressaoE> <restoExpressaoD>	
+
+<restoExpressaoD> ::= “*”<expressaoD>
+				| “/“<expressaoD>
+				| “%”<expressaoD>
+				| ε					// *, /, %
+
+
+<expressaoE> ::= <expr_basica>
+
+
+<expr_basica> ::= <expr_basicaA>
+
+
+<expr_basicaA> ::= “not” <expr_basicaA>
+			    | “-" <expr_basicaA> 
+			    | <expr_basicaB> 
+
+<expr_basicaB> ::= "(" <expressao> ")"
+			|INT_LITERAL 
+			| CHAR_LITERAL 
+			| FLOAT_LITERAL 
+			| STRING_LITERAL 
+			| <chamada_func>
+
